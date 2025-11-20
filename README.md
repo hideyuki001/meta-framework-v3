@@ -117,5 +117,3 @@ Hideyuki Okabe
 Freelance AI Evaluator / Translation QA Specialist
 Developer of ModelRefiner v4.x & Meta Framework v2–3.0
 
-yaml
-コードをコピーする
