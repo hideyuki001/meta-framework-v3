@@ -348,6 +348,7 @@ Compare divergence
 If divergence > 15% → recalibration
 
 
+
 # LAYER 6: PHASE 3 UPGRADE
 
 Ambiguous prompt → generous interpretation
@@ -355,6 +356,7 @@ Ambiguous prompt → generous interpretation
 Conflicting evidence → NA
 
 Multi-label → composite verdict
+
 
 
 # LAYER 7: API / INVOCATION MODES
