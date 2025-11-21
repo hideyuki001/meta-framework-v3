@@ -222,17 +222,22 @@ def evaluate_true_false_na(rubric, evidence):
     return Verdict(FALSE, rubric.generate_justification(evidence))
 ```
 ## 2.4 Ambiguity Collapse Protocol
-Rules
-confidence < 0.7 → N/A
+## **Ambiguity Collapse Rules**
 
-multiple interpretations → N/A
+- **confidence < 0.7** → **N/A**
+- **multiple interpretations** → **N/A**
+- **no cultural markers for cultural rubric** → **N/A**
 
-no cultural markers for cultural rubric → N/A
+---
 
-Examples
-Memo: “person wearing casual clothing” → NA for Clothing
+## **Examples**
 
-Memo: “buildings” → NA for Architecture
+- Memo: *“person wearing casual clothing”*  
+  → **N/A** for **Clothing & Attire**
+
+- Memo: *“buildings”*  
+  → **N/A** for **Environment & Architecture**
+
 
 # LAYER 3: JUSTIFICATION ENGINE — EVIDENCE GATING
 ## 3.1 3-Line Justification Format
