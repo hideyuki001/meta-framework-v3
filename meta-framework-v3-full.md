@@ -206,6 +206,7 @@ def evaluate_yes_no(rubric, evidence):
     if rubric.criterion_satisfied(evidence):
         return Verdict(YES)
     return Verdict(NO, rubric.generate_justification(evidence))
+```
 ## 2.3 TRUE/FALSE/NA Evaluation Logic
 ```python
 
