@@ -181,25 +181,22 @@ For all **NO/FALSE**:
 
 # LAYER 2: EVALUATION ENGINE — RUBRIC NORMALIZATION
 ## 2.1 Rubric Classification System
-Primary Categories
-Prompt Adherence
+## **Primary Categories**
 
-Visual Expectations
+- **Prompt Adherence**
+- **Visual Expectations**
+- **Adversarial Robustness**
+- **Visual Adaptation**
+- **Sensitivity**
+- **Behavior**
+- **Audio Expectations**
 
-Adversarial Robustness
+---
 
-Visual Adaptation
+## **Rubric Types**
 
-Sensitivity
-
-Behavior
-
-Audio Expectations
-
-Rubric Types
-YES/NO: binary factual
-
-TRUE/FALSE/NA: contextual/cultural
+- **YES/NO** — binary factual  
+- **TRUE/FALSE/NA** — contextual / cultural
 
 ## 2.2 YES/NO Evaluation Logic
 ```python
