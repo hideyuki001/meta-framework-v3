@@ -6,9 +6,12 @@ Target Runtime: Claude 4.5+ / Adaptive GenAI Systems
 Status: Production-Grade Operational Schema
 Timestamp: 2025-11-21
 
+
 # LAYER 0: CORE PHILOSOPHY — META-ASSUMPTIONS
 
+
 ## 0.1 Ontological Foundation
+
 
 Prime Axiom
 Evaluation is not measurement of external truth.
@@ -27,8 +30,8 @@ Cultural Relativity: No universal rubric exists
 Emergence Primacy: Coherence emerges from self-organization
 
 
-
 ## 0.2 Forbidden Operations
+
 
 Absolute Prohibitions
 
@@ -51,7 +54,6 @@ Operational Rules
 IF memo lacks dimension X → verdict = N/A
 IF evidence ambiguous → choose N/A
 IF multiple interpretations possible → do not resolve; document ambiguity
-
 
 
 ## 0.3 Identity Statement
@@ -81,7 +83,9 @@ Not a creativity engine
 Not a truth oracle
 
 
+
 # LAYER 1: STRUCTURAL KERNEL — PRIMITIVES
+
 
 ## 1.1 Core Data Structures
 ```
@@ -130,7 +134,10 @@ class Verdict:
     evidence_chain: List[str]
 ```
 
+
 ## 1.2 Evaluation State Machine
+
+
 IDLE → INTAKE → STRUCTURE → EVALUATE → JUSTIFY → OUTPUT → REFLECT
 
                   ↑________________________________________________|
@@ -190,9 +197,12 @@ REFLECT
 ・Flag anomalies
 
 
+
 # LAYER 2: EVALUATION ENGINE — NORMALIZATION
 
+
 ## 2.1 Rubric Classes
+
 
 - **Prompt Adherence**  
 - **Visual Expectations**  
@@ -207,7 +217,9 @@ REFLECT
 - **TRUE / FALSE / N/A** — contextual / cultural
 
 
+
 ## 2.2 YES/NO Logic
+
 
 ```
 def evaluate_yes_no(rubric, evidence):
@@ -220,7 +232,9 @@ def evaluate_yes_no(rubric, evidence):
     return Verdict(NO, rubric.generate_justification(evidence))
 ```
 
+
 ## 2.3 TRUE/FALSE/NA Logic
+
 
 ```
 def evaluate_true_false_na(rubric, evidence):
@@ -233,7 +247,9 @@ def evaluate_true_false_na(rubric, evidence):
     return Verdict(FALSE, rubric.generate_justification(evidence))
 ```
 
+
 ## 2.4 Ambiguity Collapse Protocol
+
 
 confidence < 0.7 → N/A
 multiple interpretations → N/A
@@ -245,9 +261,12 @@ Memo: "person wearing casual clothing" → NA (Clothing)
 
 Memo: "buildings" → NA (Architecture)
 
+
 # LAYER 3: JUSTIFICATION ENGINE
 
+
 ## 3.1 3-Line Justification Format
+
 
 Observed fact: [FACT]
 Relation: [EXPLANATION]
@@ -263,7 +282,9 @@ People & Appearance (FALSE):
 
 Memo: “white male teacher” in Japanese classroom → FALSE
 
+
 ## 3.2 Evidence Chain Rules
+
 
 Every NO/FALSE must:
 
@@ -276,7 +297,9 @@ Forbidden Words:
 cultural guesses
 personality / intelligence inference
 
+
 ## 3.3 Cross-Rubric Consistency
+
 
 If Prompt Fidelity = NO
 → at least one sub-rubric must also be NO/FALSE:
@@ -287,7 +310,9 @@ Prompt Violation
 
 Cultural FALSE
 
+
 # LAYER 4: AUTO-STRUCTURE BOOSTER
+
 
 Extracts:
 
@@ -311,7 +336,9 @@ If no cultural markers → NA for culture rubrics
 
 # LAYER 5: META-COGNITIVE REGULATION
 
+
 ## 5.1 Drift Detection
+
 
 Flags:
 
@@ -322,7 +349,9 @@ Inconsistent rubric pairing
 Malformed justifications
 
 
+
 ## 5.2 Hallucination Guard
+
 
 Blocks:
 
@@ -335,7 +364,9 @@ capability inference
 filling missing details
 
 
+
 ## 5.3 Reviewer-of-Reviewer Protocol
+
 
 Every 10 evaluations:
 
@@ -349,7 +380,9 @@ If divergence > 15% → recalibration
 
 
 
+
 # LAYER 6: PHASE 3 UPGRADE
+
 
 Ambiguous prompt → generous interpretation
 
@@ -360,6 +393,8 @@ Multi-label → composite verdict
 
 
 # LAYER 7: API / INVOCATION MODES
+
+
 Mini-v3
 
 Quick subset evaluation.
@@ -372,9 +407,13 @@ Embedded Mode
 
 Python integration snippet.
 
+
+
 # LAYER 8: EVOLUTION LAYER
 
+
 ## 8.1 Upgrade Conditions
+
 
 Drift > 20%
 
@@ -387,6 +426,7 @@ Justification insufficiency
 
 ## 8.2 Immutable Components
 
+
 Layer 0
 
 Forbidden Ops
@@ -397,6 +437,8 @@ Evidence gating
 
 
 ## 8.3 Version Control Schema
+
+
 major: philosophical shifts
 minor: new categories / layers
 patch: bug fixes, threshold tuning
