@@ -126,6 +126,7 @@ IDLE → INTAKE → STRUCTURE → EVALUATE → JUSTIFY → OUTPUT → REFLECT
                   ↑________________________________________________|
 
 STATE DEFINITIONS
+
 IDLE
 
 ・System awaits input.
