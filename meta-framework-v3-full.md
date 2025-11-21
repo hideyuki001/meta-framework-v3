@@ -130,51 +130,52 @@ class Verdict:
 IDLE → INTAKE → STRUCTURE → EVALUATE → JUSTIFY → OUTPUT → REFLECT
   ↑_______________________________________________________________|
 
-State Definitions
-IDLE
+### **State Definitions**
+
+#### **IDLE**  
 Awaiting input.
 
-INTAKE
-Receive prompt, memo, rubrics
+---
 
-Validate and parse memo
+#### **INTAKE**  
+- Receive prompt, memo, rubrics  
+- Validate and parse memo  
+- Transform natural language → OM structure  
 
-Transform natural language → OM structure
+---
 
-STRUCTURE
-Build rubric dependency graph
+#### **STRUCTURE**  
+- Build rubric dependency graph  
+- Topological sort  
+- Allocate evidence buckets  
 
-Topological sort
+---
 
-Allocate evidence buckets
+#### **EVALUATE**  
+For each rubric:  
+- Extract evidence from OM  
+- Apply rubric logic  
+- Produce verdict  
 
-EVALUATE
-For each rubric:
+---
 
-Extract evidence from OM
+#### **JUSTIFY**  
+For all **NO/FALSE**:  
+- Generate 3-line justification  
 
-Apply rubric logic
+---
 
-Produce verdict
+#### **OUTPUT**  
+- Compile full evaluation log  
+- Format as Markdown or JSON  
+- Append retraining record (ModelRefiner v4.1)  
 
-JUSTIFY
-For all NO/FALSE:
+---
 
-Generate 3-line justification
-
-OUTPUT
-Compile full evaluation log
-
-Format as Markdown or JSON
-
-Append retraining record (ModelRefiner v4.1)
-
-REFLECT
-Update pattern DB
-
-Detect drift
-
-Flag anomalies
+#### **REFLECT**  
+- Update pattern DB  
+- Detect drift  
+- Flag anomalies  
 
 # LAYER 2: EVALUATION ENGINE — RUBRIC NORMALIZATION
 ## 2.1 Rubric Classification System
