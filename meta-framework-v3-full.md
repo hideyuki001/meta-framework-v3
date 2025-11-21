@@ -241,137 +241,185 @@ def evaluate_true_false_na(rubric, evidence):
 
 # LAYER 3: JUSTIFICATION ENGINE — EVIDENCE GATING
 ## 3.1 3-Line Justification Format
-Observed fact: [FACT]
-Relation: [EXPLANATION]
-Conclusion: [NO/FALSE]
-Examples
-Text Overlay (NO)
-Required text absent
 
-Wrong characters present
+**Observed fact:** \[FACT\]  
+**Relation:** \[EXPLANATION\]  
+**Conclusion:** \[NO / FALSE\]
 
-People & Appearance (FALSE)
-Memo describes “white male teacher” in a Japanese classroom context
+---
+
+## **Examples**
+
+### **Text Overlay — (NO)**  
+- Observed fact: Required text is absent  
+- Relation: The rubric requires exact text content specified in the prompt  
+- Conclusion: NO  
+
+### **People & Appearance — (FALSE)**  
+- Observed fact: Memo describes a “white male teacher” in a Japanese classroom context  
+- Relation: This demographic does not align with regional expectations for the specified setting  
+- Conclusion: FALSE
 
 ## 3.2 Evidence Chain Requirement
-Every NO/FALSE must:
+Every **NO/FALSE** verdict must:
 
-contain ≥ 1 memo-based evidence item
+- contain **≥ 1 memo-based evidence item**  
+- cite **only facts explicitly present in the observation memo**  
 
-cite only memo facts
+---
 
-Forbidden: “appears”, “seems”, cultural guesses
+## **Forbidden Patterns**
+
+The following forms of inference are **not allowed**:
+
+- “appears”  
+- “seems”  
+- cultural guesses or assumptions without markers  
+
 
 ## 3.3 Consistency Enforcement
-If Prompt Fidelity = NO → must also have:
+If **Prompt Fidelity = NO**, then at least one of the following must also be **NO/FALSE**:
 
-Disqualifying Omission = NO, or
+- **Disqualifying Omission = NO**, or  
+- **Prompt Violation = NO**, or  
+- **Cultural rubric = FALSE**  
 
-Prompt Violation = NO, or
-
-Cultural FALSE
+This ensures that a fidelity failure is always supported by concrete sub-category evidence.
 
 # LAYER 4: AUTO-STRUCTURE BOOSTER
 ## 4.1 Memo → Structure Transformation
-Includes rule-based extraction for:
+The Auto-Structure Booster includes rule-based extraction for:
 
-text
+- **text**
+- **people**
+- **objects**
+- **audio**
+- **anomalies**
 
-people
-
-objects
-
-audio
-
-anomalies
-
-(Full code omitted for readability)
+*(Full code omitted for readability — see full implementation in the source file.)*
 
 ## 4.2 Entity Extraction Rules
-If memo mentions “text”, “caption” → enable Text rubrics
+- If memo mentions **“text”** or **“caption”**  
+  → **Enable Text-related rubrics**
 
-If memo mentions “person” → enable People rubrics
+- If memo mentions **“person”**  
+  → **Enable People-related rubrics**
 
-If “no audio” → auto NO for audio rubrics
+- If memo states **“no audio”**  
+  → **Auto-NO** for all Audio rubrics
 
-If no cultural markers → NA for cultural rubrics
+- If memo contains **no cultural markers**  
+  → **N/A** for cultural rubrics
+
 
 # LAYER 5: META-COGNITIVE REGULATION — DRIFT DETECTION
 ## 5.1 Drift Monitoring
-Flags:
+The system raises drift alerts when any of the following conditions are detected:
 
-NA rate > 50%
-
-Inconsistent rubric pairing
-
-Malformed justification
+- **NA rate > 50%**
+- **Inconsistent rubric pairing**
+- **Malformed justification**
+- 
 
 ## 5.2 Hallucination Suppression
-Block:
+The following inference patterns are **explicitly blocked**:
 
-“probably”, “likely”, “seems”
-
-cultural inference without evidence
-
-capability inference
-
-filling missing details
-
+- **“probably”**, **“likely”**, **“seems”**
+- **cultural inference without evidence**
+- **capability inference**
+- **filling in missing details not present in the memo**
+- 
 ## 5.3 Reviewer-of-Reviewer Protocol
-Every 10 tasks:
 
-random sample
+Every **10 tasks**, the system performs a meta-evaluation cycle:
 
-re-evaluate
+- **Randomly sample** past evaluations  
+- **Re-evaluate** using the current framework state  
+- **Compare divergence** between old and new verdicts  
 
-compare divergence
+If **divergence > 15%**, then:
 
-if >15% → recalibration
+- **Trigger recalibration**  
+- Identify the cause of drift  
+- Update thresholds or extraction rules while preserving core axioms  
+ 
 
-# LAYER 6: PHASE 3 UPGRADE — MULTI-DIMENSIONAL
-Ambiguous prompts → generous interpretation
 
-Conflicting evidence → NA
+# **LAYER 6: PHASE 3 UPGRADE — MULTI-DIMENSIONAL**
 
-Multi-label rubrics → composite verdicts
+- **Ambiguous prompts** → apply **generous interpretation**
+- **Conflicting evidence** → assign **N/A**
+- **Multi-label rubrics** → generate **composite verdicts**
 
-# LAYER 7: API / INVOCATION MODES
-Mini-v3 Mode
+
+# **LAYER 7: API / INVOCATION MODES**
+
+### **Mini-v3 Mode**
 Quick subset evaluation.
 
-Full-OS Mode
-Complete pipeline.
+### **Full-OS Mode**
+Complete evaluation pipeline.
 
-Embedded Mode
+### **Embedded Mode**
 Python integration snippet.
 
+
 # LAYER 8: EVOLUTION LAYER — SELF-IMPROVEMENT
-## 8.1 Upgrade Conditions
-drift >20%
+## **8.1 Upgrade Conditions**
 
-new categories
+Framework upgrades are triggered when any of the following conditions occur:
 
-cultural expansion
+- **Evaluation drift > 20%**
+- **Emergence of new rubric categories**
+- **Expansion of cultural dimensions beyond current coverage**
+- **Justification format proves insufficient for complex cases**
 
-justification insufficiency
+## **8.2 Immutable Components**
 
-## 8.2 Immutable Components
-Layer 0
+The following components **cannot be modified** in any future version upgrades:
 
-Forbidden Ops
+- **Layer 0** (Core Philosophy)
+- **Forbidden Operations**
+- **3-line justification format**
+- **Evidence-gating requirement**
 
-3-line justification
 
-Evidence gating
+## **8.3 Version Control Schema**
 
-## 8.3 Version Control Schema
-(minor/major/patch)
+Versioning follows a three-tier structure:
 
-RUNTIME SUMMARY
-Complete evaluation steps from input intake to reflective self-calibration.
+- **major** — philosophical or architectural shifts (e.g., v2 → v3)
+- **minor** — new rubric categories or new structural layers
+- **patch** — bug fixes, threshold adjustments, extraction improvements
 
-CLOSING STATEMENT
-Meta Framework v3.0 is a complete cognitive operating system for evaluator reliability, cultural safety, and structured evidence-based decisions.
+---
 
-Status: COMPLETE OPERATIONAL SPECIFICATION
-End of META FRAMEWORK v3.0
+# **RUNTIME SUMMARY**
+
+Complete evaluation steps from **input intake** to **reflective self-calibration**:
+
+1. Receive input (Prompt, Memo, Rubrics)  
+2. Transform memo → structured OM  
+3. Build rubric dependency graph  
+4. Evaluate rubrics in dependency order  
+5. Generate justifications for NO/FALSE  
+6. Validate coherence and evidence chains  
+7. Output evaluation log + retraining record  
+8. Reflect and detect drift  
+
+---
+
+# **CLOSING STATEMENT**
+
+**Meta Framework v3.0** is a **complete cognitive operating system**  
+for evaluator reliability, cultural safety, and evidence-based structured decisions.
+
+It enforces:
+
+- **Zero speculation**  
+- **Transparent reasoning**  
+- **Cultural humility**  
+- **Self-regulating drift detection**  
+
+**Status:** COMPLETE OPERATIONAL SPECIFICATION  
+**End of META FRAMEWORK v3.0**
