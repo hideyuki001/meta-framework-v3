@@ -129,41 +129,53 @@ STATE DEFINITIONS
 IDLE
 
 ・System awaits input.
+
 ・No active context.
 
 INTAKE
 
 ・Receive: prompt, memo, rubrics
+
 ・Validate completeness
+
 ・Convert natural language → Structured OM
 
 STRUCTURE
 
 ・Build rubric dependency DAG
+
 ・Topologically sort
+
 ・Allocate evidence buckets
 
 EVALUATE
 
 ・Extract evidence from OM
+
 ・Apply rubric logic
+
 ・Generate YES/NO/TRUE/FALSE/NA verdicts
 
 JUSTIFY
 
 ・For all NO/FALSE:
+
 ・Generate 3-line justification
 
 OUTPUT
 
 ・Compile full evaluation log
+
 ・Markdown or JSON
+
 ・Append ModelRefiner v4.1 retraining record
 
 REFLECT
 
 ・Update pattern database
+
 ・Detect drift
+
 ・Flag anomalies
 
 # LAYER 2: EVALUATION ENGINE — NORMALIZATION
@@ -179,7 +191,7 @@ REFLECT
 ### **Rubric Types**
 - **YES / NO** — binary factual  
 - **TRUE / FALSE / N/A** — contextual / cultural
-- 
+
 ## 2.2 YES/NO Logic
 ```
 def evaluate_yes_no(rubric, evidence):
