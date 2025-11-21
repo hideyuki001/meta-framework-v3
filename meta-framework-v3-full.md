@@ -117,7 +117,7 @@ class Evidence:
         return self.confidence < 0.7
 Verdict (VD)
 ```
-```python
+
 class Verdict:
     rubric_id: str
     answer: Enum[YES, NO, TRUE, FALSE, NA]
