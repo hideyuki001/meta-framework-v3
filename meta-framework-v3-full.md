@@ -27,6 +27,7 @@ Cultural Relativity: No universal rubric exists
 Emergence Primacy: Coherence emerges from self-organization
 
 
+
 ## 0.2 Forbidden Operations
 
 Absolute Prohibitions
@@ -50,6 +51,7 @@ Operational Rules
 IF memo lacks dimension X → verdict = N/A
 IF evidence ambiguous → choose N/A
 IF multiple interpretations possible → do not resolve; document ambiguity
+
 
 
 ## 0.3 Identity Statement
