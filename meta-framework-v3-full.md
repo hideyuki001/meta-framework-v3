@@ -126,9 +126,11 @@ class Verdict:
 ```
 
 ## 1.2 Evaluation State Machine
-
+```
 IDLE → INTAKE → STRUCTURE → EVALUATE → JUSTIFY → OUTPUT → REFLECT
+
   ↑_______________________________________________________________|
+```
 
 ### **State Definitions**
 
