@@ -128,75 +128,58 @@ IDLE → INTAKE → STRUCTURE → EVALUATE → JUSTIFY → OUTPUT → REFLECT
 STATE DEFINITIONS
 IDLE
 
-System awaits input.
+・System awaits input.
+・No active context.
 
 INTAKE
 
-Receive prompt, memo, rubrics
-
-Verify completeness
-
-Parse memo → OM
+・Receive: prompt, memo, rubrics
+・Validate completeness
+・Convert natural language → Structured OM
 
 STRUCTURE
 
-Build dependency DAG
-
-Topologically sort
-
-Allocate evidence buckets
+・Build rubric dependency DAG
+・Topologically sort
+・Allocate evidence buckets
 
 EVALUATE
 
-Extract evidence
-
-Apply rubric logic
-
-Generate verdict
+・Extract evidence from OM
+・Apply rubric logic
+・Generate YES/NO/TRUE/FALSE/NA verdicts
 
 JUSTIFY
 
-Generate 3-line justification for all NO/FALSE
+・For all NO/FALSE:
+・Generate 3-line justification
 
 OUTPUT
 
-Compile evaluation log
-
-Markdown or JSON
-
-Append retraining record (ModelRefiner v4.1)
+・Compile full evaluation log
+・Markdown or JSON
+・Append ModelRefiner v4.1 retraining record
 
 REFLECT
 
-Update pattern DB
-
-Detect drift
-
-Flag anomalies
+・Update pattern database
+・Detect drift
+・Flag anomalies
 
 # LAYER 2: EVALUATION ENGINE — NORMALIZATION
 ## 2.1 Rubric Classes
-Primary Categories
+- **Prompt Adherence**  
+- **Visual Expectations**  
+- **Adversarial Robustness**  
+- **Visual Adaptation**  
+- **Sensitivity**  
+- **Behavior**  
+- **Audio Expectations**  
 
-Prompt Adherence
-
-Visual Expectations
-
-Adversarial Robustness
-
-Visual Adaptation
-
-Sensitivity
-
-Behavior
-
-Audio Expectations
-
-Rubric Types
-
-YES/NO → binary factual
-TRUE/FALSE/NA → contextual/cultural
-
+### **Rubric Types**
+- **YES / NO** — binary factual  
+- **TRUE / FALSE / N/A** — contextual / cultural
+- 
 ## 2.2 YES/NO Logic
 ```
 def evaluate_yes_no(rubric, evidence):
