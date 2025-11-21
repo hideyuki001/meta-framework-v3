@@ -75,6 +75,7 @@ Not a truth oracle
 
 # LAYER 1: STRUCTURAL KERNEL — PRIMITIVES
 ## 1.1 Core Data Structures
+```
 ObservationMemo (OM)
 class ObservationMemo:
     fields = {
@@ -118,9 +119,10 @@ class Verdict:
     answer: Enum[YES, NO, TRUE, FALSE, NA]
     justification: Optional[str]
     evidence_chain: List[str]
-
+```
 ## 1.2 Evaluation State Machine
 IDLE → INTAKE → STRUCTURE → EVALUATE → JUSTIFY → OUTPUT → REFLECT
+
                   ↑________________________________________________|
 
 STATE DEFINITIONS
@@ -196,6 +198,7 @@ YES/NO → binary factual
 TRUE/FALSE/NA → contextual/cultural
 
 ## 2.2 YES/NO Logic
+```
 def evaluate_yes_no(rubric, evidence):
     if evidence.is_absent():
         return Verdict(NO, "Required element not present.")
@@ -204,8 +207,9 @@ def evaluate_yes_no(rubric, evidence):
     if rubric.criterion_satisfied(evidence):
         return Verdict(YES)
     return Verdict(NO, rubric.generate_justification(evidence))
-
+```
 ## 2.3 TRUE/FALSE/NA Logic
+```
 def evaluate_true_false_na(rubric, evidence):
     if rubric.category_not_applicable(evidence):
         return Verdict(NA)
@@ -214,7 +218,7 @@ def evaluate_true_false_na(rubric, evidence):
     if rubric.cultural_criterion_met(evidence):
         return Verdict(TRUE)
     return Verdict(FALSE, rubric.generate_justification(evidence))
-
+```
 ## 2.4 Ambiguity Collapse Protocol
 confidence < 0.7 → N/A
 multiple interpretations → N/A
