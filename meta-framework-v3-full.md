@@ -124,10 +124,10 @@ class Verdict:
     justification: Optional[str]
     evidence_chain: List[str]
 ## 1.2 Evaluation State Machine
-```
+
 IDLE → INTAKE → STRUCTURE → EVALUATE → JUSTIFY → OUTPUT → REFLECT
   ↑_______________________________________________________________|
-```  
+
 State Definitions
 IDLE
 Awaiting input.
