@@ -116,13 +116,15 @@ class Evidence:
     def is_ambiguous(self) -> bool:
         return self.confidence < 0.7
 Verdict (VD)
-```
+
 
 class Verdict:
     rubric_id: str
     answer: Enum[YES, NO, TRUE, FALSE, NA]
     justification: Optional[str]
     evidence_chain: List[str]
+```
+
 ## 1.2 Evaluation State Machine
 
 IDLE → INTAKE → STRUCTURE → EVALUATE → JUSTIFY → OUTPUT → REFLECT
