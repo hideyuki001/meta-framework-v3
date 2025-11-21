@@ -123,7 +123,7 @@ class Verdict:
     answer: Enum[YES, NO, TRUE, FALSE, NA]
     justification: Optional[str]
     evidence_chain: List[str]
-1.2 Evaluation State Machine
+## 1.2 Evaluation State Machine
 ```
 IDLE → INTAKE → STRUCTURE → EVALUATE → JUSTIFY → OUTPUT → REFLECT
   ↑_______________________________________________________________|
@@ -174,8 +174,8 @@ Detect drift
 
 Flag anomalies
 
-LAYER 2: EVALUATION ENGINE — RUBRIC NORMALIZATION
-2.1 Rubric Classification System
+# LAYER 2: EVALUATION ENGINE — RUBRIC NORMALIZATION
+## 2.1 Rubric Classification System
 Primary Categories
 Prompt Adherence
 
@@ -196,7 +196,7 @@ YES/NO: binary factual
 
 TRUE/FALSE/NA: contextual/cultural
 
-2.2 YES/NO Evaluation Logic
+## 2.2 YES/NO Evaluation Logic
 ```python
 def evaluate_yes_no(rubric, evidence):
     if evidence.is_absent():
@@ -206,7 +206,7 @@ def evaluate_yes_no(rubric, evidence):
     if rubric.criterion_satisfied(evidence):
         return Verdict(YES)
     return Verdict(NO, rubric.generate_justification(evidence))
-2.3 TRUE/FALSE/NA Evaluation Logic
+## 2.3 TRUE/FALSE/NA Evaluation Logic
 ```python
 
 def evaluate_true_false_na(rubric, evidence):
@@ -218,7 +218,7 @@ def evaluate_true_false_na(rubric, evidence):
         return Verdict(TRUE)
     return Verdict(FALSE, rubric.generate_justification(evidence))
 ```
-2.4 Ambiguity Collapse Protocol
+## 2.4 Ambiguity Collapse Protocol
 Rules
 confidence < 0.7 → N/A
 
@@ -231,8 +231,8 @@ Memo: “person wearing casual clothing” → NA for Clothing
 
 Memo: “buildings” → NA for Architecture
 
-LAYER 3: JUSTIFICATION ENGINE — EVIDENCE GATING
-3.1 3-Line Justification Format
+# LAYER 3: JUSTIFICATION ENGINE — EVIDENCE GATING
+## 3.1 3-Line Justification Format
 Observed fact: [FACT]
 Relation: [EXPLANATION]
 Conclusion: [NO/FALSE]
@@ -245,7 +245,7 @@ Wrong characters present
 People & Appearance (FALSE)
 Memo describes “white male teacher” in a Japanese classroom context
 
-3.2 Evidence Chain Requirement
+## 3.2 Evidence Chain Requirement
 Every NO/FALSE must:
 
 contain ≥ 1 memo-based evidence item
@@ -254,7 +254,7 @@ cite only memo facts
 
 Forbidden: “appears”, “seems”, cultural guesses
 
-3.3 Consistency Enforcement
+## 3.3 Consistency Enforcement
 If Prompt Fidelity = NO → must also have:
 
 Disqualifying Omission = NO, or
@@ -263,8 +263,8 @@ Prompt Violation = NO, or
 
 Cultural FALSE
 
-LAYER 4: AUTO-STRUCTURE BOOSTER
-4.1 Memo → Structure Transformation
+# LAYER 4: AUTO-STRUCTURE BOOSTER
+## 4.1 Memo → Structure Transformation
 Includes rule-based extraction for:
 
 text
@@ -279,7 +279,7 @@ anomalies
 
 (Full code omitted for readability)
 
-4.2 Entity Extraction Rules
+## 4.2 Entity Extraction Rules
 If memo mentions “text”, “caption” → enable Text rubrics
 
 If memo mentions “person” → enable People rubrics
@@ -288,8 +288,8 @@ If “no audio” → auto NO for audio rubrics
 
 If no cultural markers → NA for cultural rubrics
 
-LAYER 5: META-COGNITIVE REGULATION — DRIFT DETECTION
-5.1 Drift Monitoring
+# LAYER 5: META-COGNITIVE REGULATION — DRIFT DETECTION
+## 5.1 Drift Monitoring
 Flags:
 
 NA rate > 50%
@@ -298,7 +298,7 @@ Inconsistent rubric pairing
 
 Malformed justification
 
-5.2 Hallucination Suppression
+## 5.2 Hallucination Suppression
 Block:
 
 “probably”, “likely”, “seems”
@@ -309,7 +309,7 @@ capability inference
 
 filling missing details
 
-5.3 Reviewer-of-Reviewer Protocol
+## 5.3 Reviewer-of-Reviewer Protocol
 Every 10 tasks:
 
 random sample
@@ -320,14 +320,14 @@ compare divergence
 
 if >15% → recalibration
 
-LAYER 6: PHASE 3 UPGRADE — MULTI-DIMENSIONAL
+# LAYER 6: PHASE 3 UPGRADE — MULTI-DIMENSIONAL
 Ambiguous prompts → generous interpretation
 
 Conflicting evidence → NA
 
 Multi-label rubrics → composite verdicts
 
-LAYER 7: API / INVOCATION MODES
+# LAYER 7: API / INVOCATION MODES
 Mini-v3 Mode
 Quick subset evaluation.
 
@@ -337,8 +337,8 @@ Complete pipeline.
 Embedded Mode
 Python integration snippet.
 
-LAYER 8: EVOLUTION LAYER — SELF-IMPROVEMENT
-8.1 Upgrade Conditions
+# LAYER 8: EVOLUTION LAYER — SELF-IMPROVEMENT
+## 8.1 Upgrade Conditions
 drift >20%
 
 new categories
@@ -347,7 +347,7 @@ cultural expansion
 
 justification insufficiency
 
-8.2 Immutable Components
+## 8.2 Immutable Components
 Layer 0
 
 Forbidden Ops
@@ -356,7 +356,7 @@ Forbidden Ops
 
 Evidence gating
 
-8.3 Version Control Schema
+## 8.3 Version Control Schema
 (minor/major/patch)
 
 RUNTIME SUMMARY
