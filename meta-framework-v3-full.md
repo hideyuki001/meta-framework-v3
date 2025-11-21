@@ -1,5 +1,3 @@
-# **🌐 META FRAMEWORK v3.0 — PUBLICATION EDITION（GitHub 完全対応版）**
-
 **Meta Framework v3.0 — Complete Cognitive Evaluation Operating System**  
  **Author:** Hideyuki Okabe  
  **Architecture Type:** Self-Consistent Evaluator OS  
