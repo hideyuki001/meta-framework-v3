@@ -1,4 +1,4 @@
-# META FRAMEWORK v3.0 — COMPLETE COGNITIVE OPERATING SYSTEM
+### META FRAMEWORK v3.0 — COMPLETE COGNITIVE OPERATING SYSTEM
 
 Document Architecture Type: Self-Consistent Evaluator OS
 Generation Authority: Hideyuki Okabe Cognitive Model Extraction
