@@ -7,6 +7,7 @@ Status: Production-Grade Operational Schema
 Timestamp: 2025-11-21
 
 # LAYER 0: CORE PHILOSOPHY — META-ASSUMPTIONS
+
 ## 0.1 Ontological Foundation
 
 Prime Axiom
@@ -25,7 +26,9 @@ Cultural Relativity: No universal rubric exists
 
 Emergence Primacy: Coherence emerges from self-organization
 
+
 ## 0.2 Forbidden Operations
+
 Absolute Prohibitions
 
 Speculative Completion（推測補完）
@@ -48,7 +51,9 @@ IF memo lacks dimension X → verdict = N/A
 IF evidence ambiguous → choose N/A
 IF multiple interpretations possible → do not resolve; document ambiguity
 
+
 ## 0.3 Identity Statement
+
 What This System IS
 
 A procedural evaluation OS
@@ -73,7 +78,9 @@ Not a creativity engine
 
 Not a truth oracle
 
+
 # LAYER 1: STRUCTURAL KERNEL — PRIMITIVES
+
 ## 1.1 Core Data Structures
 ```
 ObservationMemo (OM)
@@ -120,6 +127,7 @@ class Verdict:
     justification: Optional[str]
     evidence_chain: List[str]
 ```
+
 ## 1.2 Evaluation State Machine
 IDLE → INTAKE → STRUCTURE → EVALUATE → JUSTIFY → OUTPUT → REFLECT
 
@@ -179,8 +187,11 @@ REFLECT
 
 ・Flag anomalies
 
+
 # LAYER 2: EVALUATION ENGINE — NORMALIZATION
+
 ## 2.1 Rubric Classes
+
 - **Prompt Adherence**  
 - **Visual Expectations**  
 - **Adversarial Robustness**  
@@ -193,7 +204,9 @@ REFLECT
 - **YES / NO** — binary factual  
 - **TRUE / FALSE / N/A** — contextual / cultural
 
+
 ## 2.2 YES/NO Logic
+
 ```
 def evaluate_yes_no(rubric, evidence):
     if evidence.is_absent():
@@ -204,7 +217,9 @@ def evaluate_yes_no(rubric, evidence):
         return Verdict(YES)
     return Verdict(NO, rubric.generate_justification(evidence))
 ```
+
 ## 2.3 TRUE/FALSE/NA Logic
+
 ```
 def evaluate_true_false_na(rubric, evidence):
     if rubric.category_not_applicable(evidence):
@@ -215,7 +230,9 @@ def evaluate_true_false_na(rubric, evidence):
         return Verdict(TRUE)
     return Verdict(FALSE, rubric.generate_justification(evidence))
 ```
+
 ## 2.4 Ambiguity Collapse Protocol
+
 confidence < 0.7 → N/A
 multiple interpretations → N/A
 no cultural markers → N/A
@@ -227,7 +244,9 @@ Memo: "person wearing casual clothing" → NA (Clothing)
 Memo: "buildings" → NA (Architecture)
 
 # LAYER 3: JUSTIFICATION ENGINE
+
 ## 3.1 3-Line Justification Format
+
 Observed fact: [FACT]
 Relation: [EXPLANATION]
 Conclusion: [NO/FALSE]
@@ -267,6 +286,7 @@ Prompt Violation
 Cultural FALSE
 
 # LAYER 4: AUTO-STRUCTURE BOOSTER
+
 Extracts:
 
 text
@@ -288,6 +308,7 @@ If “no audio” → auto NO for audio
 If no cultural markers → NA for culture rubrics
 
 # LAYER 5: META-COGNITIVE REGULATION
+
 ## 5.1 Drift Detection
 
 Flags:
@@ -297,6 +318,7 @@ NA rate > 50%
 Inconsistent rubric pairing
 
 Malformed justifications
+
 
 ## 5.2 Hallucination Guard
 
@@ -310,6 +332,7 @@ capability inference
 
 filling missing details
 
+
 ## 5.3 Reviewer-of-Reviewer Protocol
 
 Every 10 evaluations:
@@ -322,6 +345,7 @@ Compare divergence
 
 If divergence > 15% → recalibration
 
+
 # LAYER 6: PHASE 3 UPGRADE
 
 Ambiguous prompt → generous interpretation
@@ -329,6 +353,7 @@ Ambiguous prompt → generous interpretation
 Conflicting evidence → NA
 
 Multi-label → composite verdict
+
 
 # LAYER 7: API / INVOCATION MODES
 Mini-v3
@@ -344,6 +369,7 @@ Embedded Mode
 Python integration snippet.
 
 # LAYER 8: EVOLUTION LAYER
+
 ## 8.1 Upgrade Conditions
 
 Drift > 20%
@@ -354,6 +380,7 @@ Cultural expansion
 
 Justification insufficiency
 
+
 ## 8.2 Immutable Components
 
 Layer 0
@@ -363,6 +390,7 @@ Forbidden Ops
 3-line justification
 
 Evidence gating
+
 
 ## 8.3 Version Control Schema
 major: philosophical shifts
