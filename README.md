@@ -1,92 +1,99 @@
-# Meta Framework v3.0 — Cognitive Evaluation OS
+# Meta Framework v3.0 — Evidence-Based AI Evaluation Architecture
 
-A procedural, reproducible, and model-agnostic **Evaluation Operating System (Eval-OS)**  
-designed by **Hideyuki Okabe (2025)**
+A reproducible, evidence-based Cognitive Evaluation Operating System (Eval-OS) for LLMs, multimodal AI, and Human-in-the-Loop quality assurance.
 
-Source document: `META FRAMEWORK v3.0`  
-(Internal reference only)
-
----
-
-## 🎯 Overview
-
-**Meta Framework v3.0** is a *Cognitive Evaluation Operating System* built from  
-dozens of real-world multimodal evaluation sessions.
-
-It addresses the core challenges of LLM/GenAI evaluation:
-
-- **Ban on Speculation** (zero inferred facts)
-- **Clear Evidence Chains** (Observation → Evidence → Verdict)
-- **Structured Judgments** using **YES/NO** and **TRUE/FALSE/NA**
-- **Full reproducibility** (same memo → same verdict)
-- **Safe cultural & ethical processing**
-- **Drift Detection** to reduce evaluator inconsistency
-- **Full compatibility with ModelRefiner v4.x**
-- **Enterprise-grade reliability**
+**Author:** Hideyuki Okabe  
+**Architecture:** Cognitive Evaluation Operating System (Eval-OS)  
+**Target Runtime:** Claude 4.5+, GPT-5 class LLMs, and compatible AI systems  
+**Status:** Production-Grade Specification (v3.0)
 
 ---
 
-## 🧠 Architecture (8-Layer Evaluation OS)
+# Overview
 
-### **Layer 0 — Philosophy & Forbidden Operations**
-Foundational rules: No speculation, no cultural absolutism, no impressionistic reasoning.
+Meta Framework v3.0 is a model-agnostic evaluation architecture developed from 40–50+ real-world multimodal evaluation sessions.
 
-### **Layer 1 — Structural Kernel**
-Base classes for **Observation Memo → Evidence → Verdict**  
-including Evidence-chain enforcement.
+It provides a structured and reproducible methodology for AI evaluation by separating observation, evidence, judgment, and justification into traceable decision stages.
 
-### **Layer 2 — Evaluation Engine**
-Rubric normalization, YES/NO logic, TRUE/FALSE/NA cultural judgment.
-
-### **Layer 3 — Justification Engine**
-3-line justification format, inference suppression, traceability guarantees.
-
-### **Layer 4 — Auto-Structure Booster**
-Natural-language memo → structured OM  
-(entity extraction, anomaly detection, negative pattern detection).
-
-### **Layer 5 — Meta-Cognitive Regulation**
-Evaluator drift detection, consistency analysis, forbidden inference monitoring.
-
-### **Layer 6 — Advanced Evaluation Layer**
-Multi-label rubrics, ambiguous prompt handling, conflict resolution.
-
-### **Layer 7 — Interface Modes**
-- Mini-v3
-- Full-OS evaluation mode
-- Embedding Mode (integration in external apps)
-
-### **Layer 8 — Evolution Layer**
-Roadmap: v3.1 → v4.0  
-Rubric DAG, cultural dimension upgrade, safety expansion.
+The framework is designed to improve evaluator consistency, reduce hallucinations, support Human-in-the-Loop workflows, and enable reproducible quality assurance across AI systems.
 
 ---
 
-## 📌 Why v3.0?
+# Core Capabilities
 
-- Optimized for **large-scale, rubric-driven AI evaluation**
-- Extracted from **40–50+ real evaluation logs**
-- Condensed from v2 (45k+ characters) into a workable core
-- Stronger cultural/ethical safety rules
-- Built-in drift detection & meta-review
-- Fully interoperable with **ModelRefiner v4.x**
-- Generalized for safe public use (no project-specific content)
-
----
-
-## 🚀 Use Cases
-
-- Large-scale **rubric-based** / **evidence-based** evaluation
-- Safety / RLHF assessments
-- Cultural & ethical compliance QA
-- Image / video multimodal evaluation
-- Translation QA (successor to v2)
-- Creative refinement with ModelRefiner v4.x
-- Integration with custom LLMs & workflow agents
+- Reproducible AI Evaluation
+- Evidence-Based Decision Making
+- Human-in-the-Loop Evaluation
+- Hallucination Prevention
+- Structured YES/NO & TRUE/FALSE/NA Judgments
+- Explainable Evidence Chains
+- Evaluator Drift Detection
+- Cultural & Ethical Safety Controls
+- Enterprise-Scale Evaluation Workflows
+- Full Compatibility with ModelRefiner v4.x
 
 ---
 
-## 📡 Integration Example (Python)
+# Architecture
+
+## Layer 0 — Core Philosophy
+Foundational evaluation principles and forbidden operations.
+
+## Layer 1 — Structural Kernel
+Observation Memo → Evidence → Verdict architecture.
+
+## Layer 2 — Evaluation Engine
+Rubric normalization, binary evaluation logic, and structured decision processing.
+
+## Layer 3 — Justification Engine
+Traceable three-line justification and evidence-chain generation.
+
+## Layer 4 — Auto-Structure Booster
+Automatic extraction of entities, anomalies, and structured observations.
+
+## Layer 5 — Meta-Cognitive Regulation
+Evaluator consistency monitoring, hallucination suppression, and drift detection.
+
+## Layer 6 — Advanced Evaluation Layer
+Ambiguity handling, conflict resolution, and multi-label evaluation.
+
+## Layer 7 — Runtime Interfaces
+Mini Mode, Full Evaluation Mode, and Embedded API.
+
+## Layer 8 — Evolution Layer
+Continuous architectural upgrades and framework evolution.
+
+---
+
+# Why Meta Framework v3?
+
+- Built from 40–50+ real evaluator logs
+- Optimized for rubric-driven AI evaluation
+- Supports reproducible reviewer decisions
+- Reduces evaluator inconsistency
+- Prevents speculative reasoning
+- Improves auditability and traceability
+- Generalized for public AI evaluation workflows
+- Designed for enterprise-scale quality assurance
+
+---
+
+# Applications
+
+- LLM Evaluation
+- AI Quality Assurance
+- Human-in-the-Loop QA
+- Multimodal Evaluation
+- Translation QA
+- ASR Validation
+- RLHF & Preference Evaluation
+- AI Safety Assessment
+- AI Governance
+- Evaluation Pipeline Design
+
+---
+
+# Example
 
 ```python
 from meta_framework_v3 import EvaluatorOS
@@ -100,20 +107,38 @@ result = evaluator.evaluate(
 )
 
 print(result.summary)
-📈 Status
-Version: 3.0
+```
 
-Completion: 96%
+---
 
-Ready for: Production-grade evaluation
+# Project Status
 
-Next: v3.1 (Rubric DAG + conflict-case library)
+**Version:** 3.0
 
-📜 License
+**Specification Status:** Production-Grade
+
+**Current Completion:** 96%
+
+**Next Release:** v3.1 (Rubric DAG, Conflict Resolution Library, Expanded Safety Layer)
+
+---
+
+# Author
+
+**Hideyuki Okabe**
+
+AI Evaluation & Quality Assurance Specialist
+
+Specializing in:
+
+- LLM Evaluation
+- Human-in-the-Loop Quality Assurance
+- Evidence-Based Decision Systems
+- Multimodal Evaluation
+- Reproducible AI Evaluation Frameworks
+
+---
+
+# License
+
 MIT License (planned)
-
-👤 Author
-Hideyuki Okabe
-Freelance AI Evaluator / Translation QA Specialist
-Developer of ModelRefiner v4.x & Meta Framework v2–3.0
-
